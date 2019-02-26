@@ -156,12 +156,12 @@ Current version can only change **Typon**'s color setting by modifying Terminal 
 
 #### Introducing The Challenge Mode  
 
-If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
-If you manage to finish before the Opponent does, **Congratulations**, you've beaten your previous **Best record**.
-
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
 </p>
+
+If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
+If you manage to finish before the Opponent does, **Congratulations**, you've beaten your previous **Best record**.
 
 The idea behind challenge mode is to 
 
