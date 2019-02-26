@@ -5,14 +5,16 @@ With it, you can
 - [**Test your typing speed**](#regular-game-play)
 - [**Keep your records and track your progress**](#track-your-progress)
 - [**Practice typing any customized quote**](#customize-your-quotes-directory)
-- [**Have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
-  
-#### Featured mode: Challenge Mode  
+## But that's not all...
+
+- You can also [**have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
+### Featured Mode: Challenge Mode  
+
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
 </p>
 
-You can also
+And
 - [**Change The Appearance**](#customize-your-quotes-directory)
 
 ---  
