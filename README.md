@@ -5,16 +5,20 @@ With it, you can
 - [**Test your typing speed**](#regular-game-play)
 - [**Keep your records and track your progress**](#track-your-progress)
 - [**Practice typing any customized quote**](#customize-your-quotes-directory)
-- [**Have some extra fun by contesting your previous records**](#contest-your-previous-best-record)
-
+- [**Have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
   
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/intro.gif" width="550" height="420">
 </p>
 
+
+You can also
+- [**change the appearance**](#customize-your-quotes-directory)
+
 ---  
 
 ## Regular Game Play
+
 The regular Game Flow of Typon goes like:
 
 > Start Screen -> Typing -> End Screen -> Start Screen -> ...
@@ -52,6 +56,7 @@ You can also press **r key** to **replay** your last Game Play. You can then cho
 ---  
 
 ## Track Your progress
+
 On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen), You can access your previous records and the game statistics by selecting the **History** option in **Menu**.
 
 <p align="left">
@@ -95,15 +100,11 @@ In order to make your text files accessible by Typon, you need to store them in 
 - **ID** must be a non-negative integer ranging: **\[0, MAX_ID)**
 - **MAX_ID**, by default, is set to be: **3001**
 
-I didn't feel the necessity for making MAX_ID an optional value, however, it can be easily modified in the source code. 
+**Note**: I didn't feel the necessity for making MAX_ID an optional value, however, it can be easily modified in the source code. 
 
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file_struct.png" width="550" height="320">
 </p>  
-
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/resize.gif" width="550" height="420">
-</p>
 
 #### Be Careful:  
 
@@ -113,9 +114,56 @@ Since **Typon** doesn't keep a copy of the content of all the text files, it usu
 
 **Typon** checks the text file's content, only when trying to start a game under [**challenge mode**](#contest-your-previous-best-record), since incorrect record may cause undefined behaviour in this mode.
 
+## Change The appearance
 
+#### Resize Typon
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/resize.gif" width="550" height="420">
+</p>
+
+When the quote that you're trying to play is too long to display, you may have to resize **Typon**.
+
+There're **two** different ways to resize **Typon**:
+1. Resize terminal window before launching **Typon**  
+2. Use the `-resize[width][height]` flag
+
+**Option 1**: Let **Typon** automatically fit to the Terminal window's size, if Terminal is smaller than `width: 110` x `height:110`.  
+**Option 2**: Force **Typon** to be exactly the size specified by input arguments, and it can resize **Typon** to larger than `width: 110` x `height:110`.  
+  
+**Note**: Either way, you can't resize Typon to larger than current Terminal window's size, or smaller than  
+`Absolute minimum window width: 55` x `Absolute minimum windoe height: 20`. Forcely resizing **Typon** to be smaller than it's current size will cause **Typon** to quit.  
+
+#### Change Typon's color setting
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/changecolor.gif" width="550" height="420">
+</p>
+
+**Typon** only uses the **8 basic colors** on Terminal, namely:
+- Black 
+- Red
+- Green
+- Yellow 
+- Blue
+- Magenta
+- Cyan
+- White  
+
+Current version can only change **Typon**'s color setting by modifying Terminal color definition.
 
 ## Contest Your Previous Best Record
+
+#### Introducing The Challenge Mode  
+
+If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
+If you manage to finish before the Opponent does, **Congratulations**, you've beaten your previous **Best record**.
+
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
 </p>
+
+The idea behind challenge mode is to 
+
+
+
