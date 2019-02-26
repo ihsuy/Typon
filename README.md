@@ -7,14 +7,15 @@ With it, you can
 - [**Practice typing any customized quote**](#customize-your-quotes-directory)
 ## But that's not all...
 
-- You can also [**have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
+You can also  
+- [**have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
 ### Featured Mode: Challenge Mode  
 
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
 </p>
 
-And
+Other Features:  
 - [**Change The Appearance**](#customize-your-quotes-directory)
 
 ---  
@@ -124,10 +125,9 @@ Since **Typon** doesn't keep a copy of the content of all the text files, it usu
 
 
 ## Contest Your Previous Best Record
-
+[demo gif]  
 If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
-If you manage to finish before the Opponent does, **Congratulations**, you've beaten your previous **Best record**.
-
+If you manage to finish before the Opponent does, **Congratulations!!!**, you've beaten your previous **Best record**.
 
 ## Change The Appearance
 
@@ -167,5 +167,4 @@ There're **two** different ways to resize **Typon**:
 
 Current version can only change **Typon**'s color setting by modifying Terminal color definition.
 
-
-
+## Installation
