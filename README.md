@@ -7,17 +7,23 @@ With it, you can
 - [**Practice typing any customized quote**](#customize-your-quotes-directory)
 - [**Have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
   
+#### Featured mode: Challenge Mode  
 <p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/intro.gif" width="550" height="420">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
 </p>
 
-
 You can also
-- [**change the appearance**](#customize-your-quotes-directory)
+- [**Change The Appearance**](#customize-your-quotes-directory)
 
 ---  
 
 ## Regular Game Play
+
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/intro.gif" width="550" height="420">
+</p>
+
 
 The regular Game Flow of Typon goes like:
 
@@ -114,7 +120,14 @@ Since **Typon** doesn't keep a copy of the content of all the text files, it usu
 
 **Typon** checks the text file's content, only when trying to start a game under [**challenge mode**](#contest-your-previous-best-record), since incorrect record may cause undefined behaviour in this mode.
 
-## Change The appearance
+
+## Contest Your Previous Best Record
+
+If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
+If you manage to finish before the Opponent does, **Congratulations**, you've beaten your previous **Best record**.
+
+
+## Change The Appearance
 
 #### Resize Typon
 
@@ -151,19 +164,6 @@ There're **two** different ways to resize **Typon**:
 - White  
 
 Current version can only change **Typon**'s color setting by modifying Terminal color definition.
-
-## Contest Your Previous Best Record
-
-#### Introducing The Challenge Mode  
-
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
-</p>
-
-If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
-If you manage to finish before the Opponent does, **Congratulations**, you've beaten your previous **Best record**.
-
-The idea behind challenge mode is to 
 
 
 
