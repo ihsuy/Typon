@@ -1,22 +1,48 @@
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/title.gif" width="240" height="120">
+</p>
+
 # Typon
 
 Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a terminal emulator.  
 With it, you can 
 - [**Test your typing speed**](#regular-game-play)
 - [**Keep your records and track your progress**](#track-your-progress)
-- [**Practice typing any customized quote**](#customize-your-quotes-directory)
-## But that's not all...
+- [**Practice typing any customized quote**](#customize-your-quotes-directory) 
+- [**Have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
 
-You can also  
-- [**have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
-### Featured Mode: Challenge Mode  
+## Featured Mode:  Challenge Mode 
 
 <p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge%20showcase.gif" width="616" height="26">
 </p>
 
-Other Features:  
-- [**Change The Appearance**](#customize-your-quotes-directory)
+If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
+If you manage to finish before the opponent does, **Congratulations!!!**, you've beaten your previous **Best record**. 
+
+[**CLICK HERE**](#contest-your-previous-best-record) for more **details** about the **Challenge Mode**.
+
+#
+
+And more
+- [**Changing Appearance**](#changing-appearance)
+#
+
+### Software Features
+- **Completely offline**
+
+- **Works purely on terminal**
+
+- **No complicated installation necessary**
+
+  * get the binary and create two directories, you're ready to go
+- **Compiles and runs without changes on most common flavors of Unix (MacOS included)**
+
+#
+
+### Where To Begin
+- [**Installation**](#installation)
+
 
 ---  
 
@@ -28,30 +54,34 @@ Other Features:
 </p>
 
 
-The regular Game Flow of Typon goes like:
+The Typon's regular game flow goes like:
 
 > Start Screen -> Typing -> End Screen -> Start Screen -> ...
 
-You can launch **Menu** at almost anytime by pressing the **tab** key.  
+### About Menu
+
+You can launch **Menu** at almost anytime by pressing 
+> **`tab`**  
 
 The **Shortcut** to every option in **Menu** can be accessed by pressing the **First letter** of each option.  
 
-**a** and **d** are usually synonymous with **Arrow Left/Right**.
+**`a`** and **`d`** are usually synonymous with **`Arrow Left/Right`**.
 
-**Number keys** can be used to quickly move to the n-th option.
+**`Number keys`** can be used to quickly move to the n-th option.  
 
-On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen) only, the **hyphen(-)** key will launch **Search mode** and allow your to **jump** to any quote in the current jumble of quotes by inputting its ID.
-  
+#
 
-#### Start Screen
+### Start Screen
 
-On the Start Screen, a quote randomly chosen quote from your **"quotes" directory** and a message asking whether if you would like to begin typing will appear.  
+The Start Screen will be shown before each game begins.
+
+On the Start Screen, a quote chosen from your **"quotes" directory** and a message asking whether if you would like to begin typing will appear.  
 
 You can press the **first letter** of the quote or **space key** to begin the game. Pressing the **first letter** will save you the reaction time to find and press the first letter on the keyboard which will result in a faster completion.
 
-On the Start Screen only, you can press the **Number key 0** to launch [**Challenge mode**](#contest-your-previous-best-record) or the **delete key** to remove the current quote's **Best record** if it exists. A message asking for confirmation will appear.
+### End Screen
 
-#### End Screen
+The End Screen will be shown before each game completes.
 
 On the **End Screen**, Typon shows all in-game inputs including those incorrect inputs, and also shows the **time**, **number of mistakes**, and **WPM** (word per minute).  
 The formula that Typon used to calculate WPM is:
@@ -60,42 +90,96 @@ The formula that Typon used to calculate WPM is:
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/wpm_formula.png">
 </p>
 
-You can also press **r key** to **replay** your last Game Play. You can then choose to Skip it by choosing **SkipToEnd** in the **Menu**.
+#
+#### Watch How You Did: Replay
+
+On [**End Screen**](#end-screen), to view your last game play, press
+> **`r`**  
+> **Note**: You can then choose to skip the replay by choosing **SkipToEnd** in the **Menu**.
+
+#### Manually Select Quote: Goto
+
+On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen) only,   
+to **jump** to any quote in the current jumble of quotes by inputting its ID
+> **`hyphen (-)`** 
+>
+> **Note**: A prompt will appear.
 
 ---  
 
 ## Track Your progress
 
-On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen), You can access your previous records and the game statistics by selecting the **History** option in **Menu**.
+After each game is completed, **Typon** saves records about **Quote ID**, **WPM**, **Number of Mistakes** and **Date**.  
+On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen), You can access your them and the game statistics by selecting the **History** option in **Menu**.
+
 
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/history.gif" width="550" height="420">
 </p>
 
-In **History**, you can navigate through records by pressing **Arrow Up/Down** or going **Up/Down page by page** by pressing the **w** and **s key**.  
 
-You can **skip** directly to a quote by navigating to its record and press the **Space key**. 
+### In history, you can
 
-History records can also be **Sorted** by using the **Arrow left** and **right keys** to move across the column, then pressing **Return**. When **Sorting By Different Columns**, if possible, the previous order will be preserved.
+**Navigate through records**
+> **`Arrow Up/Down`**  
 
-**Game Statistics** can be accessed by pressing **0 (zero key)** in **History**.  
+**Going Up/Down page by page**
+> **`w`** or **`s`**  
 
-- **Typon** currently keeps track of:  
-  - All Time Average Gross WPM                     
-  - All Time Average Mistakes                      
-  - First 20 Games Average Gross WPM             
-  - First 20 Games Average Mistakes                 
-  - Recent 20 Games Average Gross WPM              
-  - Recent 20 Games Average Mistakes               
-  - Number of Games Played                    
-  - All Time In-Game Key Pressed 
+**Jump directly to a quote by navigating to its record and press**
+> **`Space`**  
+
+**Move across the column**
+> **`Arrow Left/Right`**  
+
+**Sort by column**
+> **`Return`**   
+>
+> **Note**: When **Sorting By Different Columns**, if possible, the previous order will be **preserved**.
+
+**Check game statistics** 
+> **`0`**
+>
+>
+>  **Note**: **Typon** collects statistics about:  
+>
+>  - All Time Average WPM                     
+>  - All Time Average Mistakes                      
+>  - First 20 Games Average WPM             
+>  - First 20 Games Average Mistakes                 
+>  - Recent 20 Games Average WPM              
+>  - Recent 20 Games Average Mistakes               
+>  - Number of Games Played                    
+>  - All Time In-Game Key Pressed 
 
 ---  
 
+## Contest Your Previous Best Record
+
+**Typon** keep tracks of every details of every valid input in each game, but only saves the details for your **Fastest Game Play** which will be used in the **Challenge mode**.  
+
+Under this mode, the opponent's text cursor (Your previous best record) will appear and start a race with you. 
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
+</p>
+
+If the **Best Record** exists for the current quote ID, and on the [**Start Screen**](#start-screen) only  
+**You can launch Challenge mode by pressing**
+> **`0`**  
+
+**Or remove the current quote's Best Record**.  
+> **`delete`**  
+>
+> **Note**: Removal of the best record will temporarily **disable** Challenge Mode for this quote.  
+>           A message asking for confirmation will appear.
+
+---  
 ## Customize Your Quotes Directory
 
-Typon can read in any **text file(.txt)** and let you practice typing on it, but the max length of your text file may vary depending on the terminal window's size. 
-In order to make your text files accessible by Typon, you need to store them in a directory called **quotes** under **Typon**'s root directory and name them following a certain naming rule.
+Typon can read in any **text file(.txt)** and let you practice typing on it, but the max length of your text file may vary depending on the terminal window's size.  
+
+In order to make your text files accessible by Typon, you need to store them in a [**directory**](#typon-file-structure) called **quotes** under **Typon**'s root directory and name them following a certain naming rule.
 
 
 <p align="left">
@@ -103,33 +187,24 @@ In order to make your text files accessible by Typon, you need to store them in 
 </p>  
 
 
-#### Quote Naming Rules:
+#### Quote Naming Rules
 
 - Name of the text file must be of the form: **quote[ID].txt**
 - **ID** must be a non-negative integer ranging: **\[0, MAX_ID)**
 - **MAX_ID**, by default, is set to be: **3001**
 
-**Note**: I didn't feel the necessity for making MAX_ID an optional value, however, it can be easily modified in the source code. 
+> **Note**: I didn't feel the necessity for making MAX_ID an optional value, however, it can be easily modified in the 
+>           source code. 
 
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file_struct.png" width="550" height="320">
-</p>  
+Any text files that are not in [**Typon's quotes directory**](#typon-file-structure) or does not follow the aforementioned [**Naming rules**](#quote-naming-rules) will be ignored by Typon.
 
-#### Be Careful:  
+Since Typon doesn't keep a copy of the content of all the text files, it only recognizes the **quote ID**. If the ID isn't changed, Typon assumes that its contents remain the same.
 
-Any file that is not in "**.txt**" format, or does not follow the aforementioned naming rules will be ignored by **Typon**.
-
-Since **Typon** doesn't keep a copy of the content of all the text files, it usually only recognizes the **quote ID**. If the ID isn't changed, it assumes that the content is the same.
-
-**Typon** checks the text file's content, only when trying to start a game under [**challenge mode**](#contest-your-previous-best-record), since incorrect record may cause undefined behaviour in this mode.
+> **Note**: Typon checks the text file's content, only when the user tries to start a game under [**challenge mode**](#contest-your-previous-best-record), 
+>           since the incorrect record may result in undefined behaviour.
 
 
-## Contest Your Previous Best Record
-[demo gif]  
-If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
-If you manage to finish before the Opponent does, **Congratulations!!!**, you've beaten your previous **Best record**.
-
-## Change The Appearance
+## Changing Appearance
 
 #### Resize Typon
 
@@ -168,3 +243,9 @@ There're **two** different ways to resize **Typon**:
 Current version can only change **Typon**'s color setting by modifying Terminal color definition.
 
 ## Installation
+
+#### Typon File Structure
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
+</p>  
