@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/logo2.png" width="350">
 </p>
 
@@ -58,6 +58,9 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 ## Regular Game Play
 
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/intro.gif" height="370">
+</p>
 
 The Typon's regular game flow goes like:
 
