@@ -1,34 +1,38 @@
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/title.gif" width="240" height="120">
+<p align="center">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/logo2.png" width="350">
 </p>
 
 # Typon
 
 Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a terminal emulator.  
+
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/intro.gif" height="370">
+</p>
+
+#
+
 With it, you can 
 - [**Test your typing speed**](#regular-game-play)
 - [**Keep your records and track your progress**](#track-your-progress)
-- [**Practice typing any customized quote**](#customize-your-quotes-directory) 
+- [**Practice typing ANY customized quote**](#customize-your-quotes-directory) 
 - [**Have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
 
 ## Featured Mode:  Challenge Mode 
 
 <p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge%20showcase.gif" width="616" height="26">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge%20showcase.gif" height="26">
 </p>
 
 If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
 If you manage to finish before the opponent does, **Congratulations!!!**, you've beaten your previous **Best record**. 
 
-[**CLICK HERE**](#contest-your-previous-best-record) for more **details** about the **Challenge Mode**.
+For more **details** about the **Challenge Mode** [**click here**](#contest-your-previous-best-record) .
 
 #
 
-And more
-- [**Changing Appearance**](#changing-appearance)
-#
-
-### Software Features
+### Features
 - **Completely offline**
 
 - **Works purely on terminal**
@@ -40,18 +44,19 @@ And more
 
 #
 
-### Where To Begin
-- [**Installation**](#installation)
+
+## Installation
+
+#### Typon File Structure
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
+</p>  
 
 
 ---  
 
 ## Regular Game Play
-
-
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/intro.gif" width="550" height="420">
-</p>
 
 
 The Typon's regular game flow goes like:
@@ -95,6 +100,7 @@ The formula that Typon used to calculate WPM is:
 
 On [**End Screen**](#end-screen), to view your last game play, press
 > **`r`**  
+>
 > **Note**: You can then choose to skip the replay by choosing **SkipToEnd** in the **Menu**.
 
 #### Manually Select Quote: Goto
@@ -164,11 +170,11 @@ Under this mode, the opponent's text cursor (Your previous best record) will app
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
 </p>
 
-If the **Best Record** exists for the current quote ID, and on the [**Start Screen**](#start-screen) only  
-**You can launch Challenge mode by pressing**
+If the **Best Record** exists for the current quote ID,
+**You can launch Challenge mode on the [Start Screen](#start-screen) by pressing**
 > **`0`**  
 
-**Or remove the current quote's Best Record**.  
+**Or remove the current quote's Best Record by pressing** 
 > **`delete`**  
 >
 > **Note**: Removal of the best record will temporarily **disable** Challenge Mode for this quote.  
@@ -215,14 +221,15 @@ Since Typon doesn't keep a copy of the content of all the text files, it only re
 When the quote that you're trying to play is too long to display, you may have to resize **Typon**.
 
 There're **two** different ways to resize **Typon**:
-1. Resize terminal window before launching **Typon**  
+1. Resize terminal window before launching **Typon** 
+> > **Typon** automatically fits to the Terminal window's size, as long as Terminal is smaller than  
+`width: 110` x `height:110`.  
 2. Use the `-resize[width][height]` flag
-
-**Option 1**: Let **Typon** automatically fit to the Terminal window's size, if Terminal is smaller than `width: 110` x `height:110`.  
-**Option 2**: Force **Typon** to be exactly the size specified by input arguments, and it can resize **Typon** to larger than `width: 110` x `height:110`.  
+> > Force **Typon** to be exactly the size specified by input arguments, and it can resize **Typon** to larger than `width: 110` x `height:110`.  
   
 **Note**: Either way, you can't resize Typon to larger than current Terminal window's size, or smaller than  
-`Absolute minimum window width: 55` x `Absolute minimum windoe height: 20`. Forcely resizing **Typon** to be smaller than it's current size will cause **Typon** to quit.  
+`Absolute minimum window width: 55` x `Absolute minimum windoe height: 20`.  
+Forcely resizing **Typon** to be smaller than it's current size will cause **Typon** to quit.  
 
 #### Change Typon's color setting
 
@@ -242,10 +249,3 @@ There're **two** different ways to resize **Typon**:
 
 Current version can only change **Typon**'s color setting by modifying Terminal color definition.
 
-## Installation
-
-#### Typon File Structure
-
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
-</p>  
