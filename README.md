@@ -273,8 +273,7 @@ When the quote that you're trying to play is too long to display, you may have t
 
 There're **two** different ways to resize **Typon**:
 1. Resize terminal window before launching **Typon** 
-> **Note**: This let Typon automatically fits to the Terminal window's size, as long as Terminal is smaller than  
-            `width: 110` x `height:110`.  
+> **Note**: This let Typon automatically fits to the Terminal window. (won't be larger than `width: 110` x `height:110`)  
 2. Use the `-resize[width][height]` flag, for example:
 ```
 typon -resize 90 30
@@ -283,7 +282,7 @@ typon -resize 90 30
   
 **Note**: Either way, you can't resize Typon to larger than current Terminal window's size, or smaller than  
 `Absolute minimum window width: 55` x `Absolute minimum windoe height: 20`.  
-Forcely resizing **Typon** to be smaller than it's current size will cause **Typon** to quit.  
+Forcely resizing **Typon** to a invalid size will cause **Typon** to quit.  
 
 #### Change Typon's color setting
 
