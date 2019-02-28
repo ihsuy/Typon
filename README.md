@@ -301,3 +301,11 @@ Forcely resizing **Typon** to invalid size will cause **Typon** to quit.
 - White  
 
 Current version only support changing **Typon**'s color setting by modifying Terminal's color definition.
+
+## Credits
+
+A heartful thank you to Anna for great suggestions and helps.:heart:  
+A special thank you to Kyu for correcting my broken English.
+
+## License
+Licensed under the GNU General Public License v3.0.
