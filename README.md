@@ -305,7 +305,7 @@ Current version only support changing **Typon**'s color setting by modifying Ter
 ## Credits
 
 A heartful thank you to Anna for great suggestions and helps.:heart:  
-A special thank you to Kyu for correcting my broken English.
+A special thank you to Kyu for correcting my broken English.:muscle:
 
 ## License
 Licensed under the GNU General Public License v3.0.
