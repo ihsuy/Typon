@@ -438,7 +438,7 @@ void Graphics::print_menu(const string& type, int highlight)
     {
         if(highlight==i) wattron(inner_menu_frame, A_REVERSE);
         
-        mvwaddstr(inner_menu_frame, 0, i*11 + 2, menu_options[i].c_str());
+        mvwaddstr(inner_menu_frame, 0, i*12, menu_options[i].c_str());
         
         if(highlight==i) wattroff(inner_menu_frame, A_REVERSE);
     }

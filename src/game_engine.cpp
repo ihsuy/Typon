@@ -329,7 +329,7 @@ void game_engine::init_mode(const string& msg)
 void game_engine::game_begin()
 {
     G.erase_info();
-    
+    current_game.update_text_display(G);
     timing_begin();
 }
 

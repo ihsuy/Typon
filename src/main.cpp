@@ -1,12 +1,14 @@
 #include "game_engine.hpp"
 #include "tools.hpp"
 #include <iostream>
+#include <fstream>
+#include <sys/stat.h>
 using namespace std;
 
 int main(int argc, const char *argv[])
 {
     try{
-        string user_defined_quote_path = "./";
+        string user_defined_quote_path = realpath(".", NULL);
         int MAX_ID = 3001;
         int user_defined_w = 0;
         int user_defined_h = 0;
@@ -32,7 +34,7 @@ int main(int argc, const char *argv[])
                     else
                     {
                         char* real_path = realpath(".", NULL);
-                        printf("%s/quotes/\n", real_path);
+                        printf("Current Quote Path: %s\n", real_path);
                     }
                 }
                 else if(!strcmp(argv[i], "-resize"))
@@ -56,14 +58,27 @@ int main(int argc, const char *argv[])
                         printf("Too few arguments for -resize.\ninput must be 2 integers\nindicating width and height.\n");
                     }
                 }
-                else if(!strcmp(argv[i], "-whereami"))
+                else if(!strcmp(argv[i], "-new") and (argc == 2))
                 {
                     char* real_path = realpath(".", NULL);
-                    printf("%s/\n", real_path);
+                    string typon_sh_path = string(real_path)+"/typon_run.sh";
+                    ofstream newtypon(typon_sh_path);
+                    string run_sh_content = ("if [ \"$1\" = \"-path\" ] && [ $# -eq 1 ]; then\n"
+                                             "\techo \"Typon files location: "+ string(real_path) + "\"\n"
+                                             "elif [ \"$1\" = \"-new\" ]; then\n"
+                                             "\t:\n"
+                                             "elif [ \"$1\" != \"\" ]; then\n"
+                                             "\t" + real_path + "/typon $1 $2 $3 $4 $5\n"
+                                             "else\n"
+                                             "\t" + real_path + "/typon -path " + real_path+
+                                             "\nfi");
+                    newtypon << run_sh_content;
+                    newtypon.close();
+                    //chmod((typon_sh_path).c_str(), S_IWUSR);
                 }
                 else
                 {
-                    printf("\nUndefined flag: %s\n", argv[i]);
+                    printf("Undefined flag: %s\n", argv[i]);
                 }
             }
         }
