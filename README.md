@@ -13,7 +13,7 @@ Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a terminal em
 
 #
 
-With it, you can 
+**With it, you can**  
 - [**Test your typing speed**](#regular-game-play)
 - [**Keep your records and track your progress**](#track-your-progress)
 - [**Practice typing ANY customized quote**](#customize-your-quotes-directory) 
@@ -32,27 +32,47 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 #
 
-### Features
+### Features  
+
 - **Completely offline**
+
+- **Accept literally [any quote contents](#more-about-text-file-contents) and always preserve the format.**
 
 - **Works purely on terminal**
 
-- **No complicated installation necessary**
+- **No complicated [installation](#installation) necessary**
 
-  * get the binary and create two directories, you're ready to go
 - **Compiles and runs without changes on most common flavors of Unix (MacOS included)**
+
 
 #
 
-
 ## Installation
 
-#### Typon File Structure
+### Dependencies
 
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
-</p>  
+[NCurses](https://www.gnu.org/software/ncurses) 
 
+### Install From Source
+
+Open your terminal in your preferred directory and clone this repository:
+```sh
+git clone https://github.com/ihsuy/Typon
+```
+Run the makefile
+```sh
+make
+```
+
+**Optional:**  
+
+After make, you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
+```sh
+make install
+```
+> **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#quote-naming-rules).  
+
+**You're all set, enjoy typing!**
 
 ---  
 
@@ -83,7 +103,7 @@ The **Shortcut** to every option in **Menu** can be accessed by pressing the **F
 
 The Start Screen will be shown before each game begins.
 
-On the Start Screen, a quote chosen from your **"quotes" directory** and a message asking whether if you would like to begin typing will appear.  
+On the Start Screen, a quote chosen from your [**"quotes" directory**](#typon-file-structure) and a message asking whether if you would like to begin typing will appear.  
 
 You can press the **first letter** of the quote or **space key** to begin the game. Pressing the **first letter** will save you the reaction time to find and press the first letter on the keyboard which will result in a faster completion.
 
@@ -186,14 +206,31 @@ If the **Best Record** exists for the current quote ID,
 ---  
 ## Customize Your Quotes Directory
 
-Typon can read in any **text file(.txt)** and let you practice typing on it, but the max length of your text file may vary depending on the terminal window's size.  
-
-In order to make your text files accessible by Typon, you need to store them in a [**directory**](#typon-file-structure) called **quotes** under **Typon**'s root directory and name them following a certain naming rule.
-
-
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/custom%20quote.gif" width="550" height="420">
 </p>  
+
+
+Typon can read in any text file(.txt) and let you practice typing on it, but the max length of your text file may vary depending on the terminal window's size. ([resize Typon window](#changing-appearance))
+
+#### Typon File Structure
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
+</p>  
+
+As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the directory called **quotes** under **Typon**'s root directory and name them following a certain naming rule.
+
+If you forgot your default Typon root directory , use this flag to locate it:  
+```
+typon -path
+```  
+
+The `-path [user defined path]` can also be used to manually set where typon search its quotes directory and save files:  
+```
+typon -path /Users/me/new_location/
+```  
+> **Note**: It is not recommended to change the path to Typon's root directory.
 
 
 #### Quote Naming Rules
@@ -212,6 +249,18 @@ Since Typon doesn't keep a copy of the content of all the text files, it only re
 > **Note**: Typon checks the text file's content, only when the user tries to start a game under [**challenge mode**](#contest-your-previous-best-record), 
 >           since the incorrect record may result in undefined behaviour.
 
+#
+
+#### More About Text File Contents
+If the window's size allows, Typon accepts **ANY** content as long as its in English Language.
+If possible Typon also preserves the original format of your text file.  
+**Like this**:
+
+<p align="left">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/monalisa.png" width="500" height="520">
+</p>  
+
+**Content Prettify**: If a line is too long, Typon will start a newline at a appropriate postion to avoid ugly broken words unless the word is wider than the window which is very unlikely.
 
 ## Changing Appearance
 
@@ -225,10 +274,13 @@ When the quote that you're trying to play is too long to display, you may have t
 
 There're **two** different ways to resize **Typon**:
 1. Resize terminal window before launching **Typon** 
-> > **Typon** automatically fits to the Terminal window's size, as long as Terminal is smaller than  
-`width: 110` x `height:110`.  
-2. Use the `-resize[width][height]` flag
-> > Force **Typon** to be exactly the size specified by input arguments, and it can resize **Typon** to larger than `width: 110` x `height:110`.  
+> **Note**: This let Typon automatically fits to the Terminal window's size, as long as Terminal is smaller than  
+            `width: 110` x `height:110`.  
+2. Use the `-resize[width][height]` flag, for example:
+```
+typon -resize 90 30
+```
+> **Note**: This forces **Typon** to be exactly the size specified by input, and it can resize **Typon** to any size as long             as you have a large enough Terminal window.  
   
 **Note**: Either way, you can't resize Typon to larger than current Terminal window's size, or smaller than  
 `Absolute minimum window width: 55` x `Absolute minimum windoe height: 20`.  
@@ -250,5 +302,5 @@ Forcely resizing **Typon** to be smaller than it's current size will cause **Typ
 - Cyan
 - White  
 
-Current version can only change **Typon**'s color setting by modifying Terminal color definition.
+Current version only support changing **Typon**'s color setting by modifying Terminal's color definition.
 
