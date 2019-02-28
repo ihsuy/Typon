@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <p align="left">
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/logo2.png" width="350">
 </p>
@@ -366,4 +365,3 @@ you can also press **r key** to **replay** your last Game Play. You can then cho
 <p align="left">
 <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/challenge.gif" width="550" height="420">
 </p>
->>>>>>> Stashed changes
