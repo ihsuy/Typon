@@ -36,7 +36,7 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 - **Completely offline**
 
-- **Accept literally [any quote contents](#more-about-text-file-contents) and always preserve the format.**
+- **Accepts literally [any quote](#more-about-text-file-contents) and always preserves the format.**
 
 - **Works purely on terminal**
 
@@ -105,7 +105,7 @@ The Start Screen will be shown before each game begins.
 
 On the Start Screen, a quote chosen from your [**"quotes" directory**](#typon-file-structure) and a message asking whether if you would like to begin typing will appear.  
 
-You can press the **first letter** of the quote or **space key** to begin the game. Pressing the **first letter** will save you the reaction time to find and press the first letter on the keyboard which will result in a faster completion.
+You can press the **first letter** of the quote or **space key** to begin the game. Pressing the **first letter** will save you the reaction time to find and press the first letter on the keyboard which will result in faster completion.
 
 ### End Screen
 
@@ -139,7 +139,7 @@ to **jump** to any quote in the current jumble of quotes by inputting its ID
 ## Track Your progress
 
 After each game is completed, **Typon** saves records about **Quote ID**, **WPM**, **Number of Mistakes** and **Date**.  
-On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen), You can access your them and the game statistics by selecting the **History** option in **Menu**.
+On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen), You can access them and the game statistics by selecting the **History** option in **Menu**.
 
 
 <p align="left">
@@ -170,7 +170,7 @@ On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen), You can 
 > **`0`**
 >
 >
->  **Note**: **Typon** collects statistics about:  
+>  **Note**: **Typon** collects statistics on:  
 >
 >  - All Time Average WPM                     
 >  - All Time Average Mistakes                      
@@ -185,7 +185,7 @@ On [**Start Screen**](#start-screen) and [**End Screen**](#end-screen), You can 
 
 ## Contest Your Previous Best Record
 
-**Typon** keep tracks of every details of every valid input in each game, but only saves the details for your **Fastest Game Play** which will be used in the **Challenge mode**.  
+**Typon** keep track of every detail of every valid input in each game, but only saves the details of your **Fastest Game Play** which will be used in the **Challenge mode**.  
 
 Under this mode, the opponent's text cursor (Your previous best record) will appear and start a race with you. 
 
@@ -211,7 +211,7 @@ If the **Best Record** exists for the current quote ID,
 </p>  
 
 
-Typon can read in any text file(.txt) and let you practice typing on it, but the max length of your text file may vary depending on the terminal window's size. ([resize Typon window](#changing-appearance))
+Typon can read in any text file(.txt) and lets you practice typing with it, but the max length of your text file may vary depending on the terminal window's size. ([resize Typon window](#changing-appearance))
 
 #### Typon File Structure
 
@@ -219,7 +219,7 @@ Typon can read in any text file(.txt) and let you practice typing on it, but the
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
 </p>  
 
-As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the directory called **quotes** under **Typon**'s root directory and name them following a certain naming rule.
+As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the **quotes directory** under **Typon**'s root directory and title them according to a certain naming rules.
 
 If you forgot your default Typon root directory , use this flag to locate it:  
 ```
@@ -259,7 +259,7 @@ If possible Typon also preserves the original format of your text file.
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/monalisa.png" width="500" height="520">
 </p>  
 
-**Content Prettify**: If a line is too long, Typon will start a newline at a appropriate postion to avoid ugly broken words unless the word is wider than the window which is very unlikely.
+**Content Prettify**: If a line is too long, Typon will start a new line at an appropriate postion to avoid disjointed words unless the word is wider than the window which is very unlikely.
 
 ## Changing Appearance
 
@@ -269,20 +269,20 @@ If possible Typon also preserves the original format of your text file.
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/resize.gif" width="550" height="420">
 </p>
 
-When the quote that you're trying to play is too long to display, you may have to resize **Typon**.
+When the quote that you're trying to use is too long to display, you may have to resize **Typon**.
 
-There're **two** different ways to resize **Typon**:
-1. Resize terminal window before launching **Typon** 
-> **Note**: This let Typon automatically fits to the Terminal window. (won't be larger than `width: 110` x `height:110`)  
+There are **two** different ways to resize **Typon**:
+1. Resizing the terminal window before launching **Typon** 
+> **Note**: This lets Typon automatically fit into the Terminal window. (won't be larger than `width: 110` x `height:110`)  
 2. Use the `-resize[width][height]` flag, for example:
 ```
 typon -resize 90 30
 ```
-> **Note**: This forces **Typon** to be exactly the size specified by input, and it can resize **Typon** to any size as long             as you have a large enough Terminal window.  
+> **Note**: This forces **Typon** to be exactly the size specified by the input, and it can resize **Typon** to any size as long             as you have a large enough Terminal window.  
   
-**Note**: Either way, you can't resize Typon to larger than current Terminal window's size, or smaller than  
-`Absolute minimum window width: 55` x `Absolute minimum windoe height: 20`.  
-Forcely resizing **Typon** to invalid size will cause **Typon** to quit.  
+**Note**: Either way, you can't resize Typon to larger than the current Terminal window's size, or smaller than  
+`Absolute minimum window width: 55` x `Absolute minimum window height: 20`.  
+Forceably resizing **Typon** to an invalid size will cause **Typon** to quit.  
 
 #### Change Typon's color setting
 
@@ -300,12 +300,12 @@ Forcely resizing **Typon** to invalid size will cause **Typon** to quit.
 - Cyan
 - White  
 
-Current version only support changing **Typon**'s color setting by modifying Terminal's color definition.
+Current versions only support changing **Typon**'s color setting by modifying Terminal's color definition.
 
 ## Credits
 
-A heartful thank you to Anna for great suggestions and helps.:heart:  
-A special thank you to Kyu for correcting my broken English.:muscle:
+A heartful thank you to Anna for great suggestions and tips. :heart:  
+A special thank you to Kyu for correcting my broken English. :muscle:  
 
 ## License
 Licensed under the GNU General Public License v3.0.
