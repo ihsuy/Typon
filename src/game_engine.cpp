@@ -231,7 +231,7 @@ void game_engine::game_intro(const string& msg)
                 // switch between 2 modes
                 mode = (mode == "Classic") ? "Challenge" : "Classic";
                 break;
-            case KEY_DEL:
+            case KEY_DEL: case KEY_BACKSPACE: case '\b':
                 remove_best_record(3);
                 break;
             case KEY_DASH:
@@ -276,7 +276,7 @@ void game_engine::init_mode(const string& msg)
                 long long test_len = 0;
                 for(auto item : best_record.second.second)
                 {
-                    if(item != KEY_DEL)
+                    if(item != KEY_DEL and item != KEY_BACKSPACE and item != '\b')
                     {
                         test_len++;
                     }
@@ -342,7 +342,7 @@ void game_engine::timing_end()
 void game_engine::inGame_loop()
 {   // current version only have 2 different modes
     show_bottom_msg(inGame_bottom_msg);
-
+    
     if(mode == "Classic")
     {
         Classic_inGame_loop();
@@ -385,7 +385,7 @@ void game_engine::Challenge_inGame_loop()
     {
         Challenge_inGame_controller();
     }
-
+    
     current_game_terminated = true;
     
     opponents_thread.join();
@@ -409,7 +409,7 @@ void game_engine::opponents_play()
         
         this_thread::sleep_for(chrono::milliseconds(best_rec[i])-avg_overslept);
         
-        if(best_inp[i] == KEY_DEL)
+        if(best_inp[i] == KEY_DEL or best_inp[i] == KEY_BACKSPACE or best_inp[i] == '\b')
         {
             current_game.opponents_len--;
         }
@@ -517,19 +517,19 @@ void game_engine::inGame_get_input()
     }
     
     if((current_text_input < KEY_SPACE
-           or current_text_input > 127)
-          and current_text_input != KEY_MENU)
+        or current_text_input > 127)
+       and current_text_input != KEY_MENU and current_text_input != KEY_BACKSPACE and current_text_input != '\b')
     {
         current_text_input = KEY_NULL;
     }
-
-//    do
-//    {
-//        current_text_input = get_input();
-//    }
-//    while((current_text_input < KEY_SPACE
-//           or current_text_input > 127)
-//          and current_text_input != KEY_MENU);
+    
+    //    do
+    //    {
+    //        current_text_input = get_input();
+    //    }
+    //    while((current_text_input < KEY_SPACE
+    //           or current_text_input > 127)
+    //          and current_text_input != KEY_MENU);
 }
 
 void game_engine::inMenu_get_input()
@@ -592,10 +592,10 @@ void game_engine::progress()
     // dont store input if num char exceeds the total length
     if((current_game.typed_length == current_lc
         and current_game.incorrect_part_len != 0
-        and current_text_input != KEY_DEL)
+        and current_text_input != KEY_DEL and current_text_input != KEY_BACKSPACE and current_text_input != '\b')
        or
        (current_game.typed_length == 0
-        and current_text_input == KEY_DEL))
+        and (current_text_input == KEY_DEL or current_text_input == KEY_BACKSPACE or current_text_input == '\b')))
     {
         return;
     }
@@ -611,10 +611,10 @@ void game_engine::Challenge_progress()
 {
     if((current_game.typed_length == current_lc
         and current_game.incorrect_part_len != 0
-        and current_text_input != KEY_DEL)
+        and current_text_input != KEY_DEL and current_text_input != KEY_BACKSPACE and current_text_input != '\b')
        or
        (current_game.typed_length == 0
-        and current_text_input == KEY_DEL))
+        and (current_text_input == KEY_DEL or current_text_input == KEY_BACKSPACE or current_text_input == '\b')))
     {
         return;
     }
@@ -879,7 +879,7 @@ void game_engine::inMenu_controller_introscr()
             }
             break;
         }
-        // shortcut key for some choices
+            // shortcut key for some choices
         case KEY_q:
             cExit();
             break;
@@ -1382,7 +1382,7 @@ void game_engine::show_History()
     // reserve first line for header
     // also handling when there're fewer records
     hdisplay_nline = ((saver.gsave_len < max_hdisplay_nline)
-                          ?(int)saver.gsave_len : max_hdisplay_nline);
+                      ?(int)saver.gsave_len : max_hdisplay_nline);
     
     gsave_last_page_len = ((saver.gsave_len % max_hdisplay_nline==0)
                            ? max_hdisplay_nline:saver.gsave_len % max_hdisplay_nline);
@@ -1655,7 +1655,7 @@ void game_engine::skipToQuote()
             }
             default:
             {
-                if(current_info_input == KEY_DEL)
+                if(current_info_input == KEY_DEL or current_info_input == KEY_BACKSPACE or current_info_input == '\b')
                 {
                     if(input_ID.size() != 0)
                     {
@@ -1690,7 +1690,7 @@ void game_engine::remove_best_record(const int& ask_again, const string& msg)
     }
     
     string really = "REALLY";
-
+    
     G.info_add_str(msg+" (y/n)", remove_record_msg_color, true, false);
     
     show_bottom_msg(removeRecord_bottom_msg);
@@ -1732,11 +1732,11 @@ void game_engine::help()
     G.erase_info();
     inHelp = true;
     
-
+    
     vector<pair<string, string>> About =
     {
         {"For more helps please visit:\n", "magenta"},
-        {"http://abc.com", "yellow"},
+        {"https://github.com/ihsuy/Typon", "yellow"},
         {"\n\nAbout Challenge Mode", "magenta"},
         {"\nIf you start a ", "white"},
         {"Game", "green"},
@@ -1757,7 +1757,7 @@ void game_engine::help()
         {"Best Record", "green"},
         {".", "white"},
     };
-
+    
     while(inHelp)
     {
         G.erase_text();
@@ -1765,22 +1765,22 @@ void game_engine::help()
         {
             G.text_add_str(token.first, token.second, false, false);
         }
-
+        
         show_bottom_msg(inHelp_bottom_msg, false);
-
+        
         G.refresh_text_display(); // probably don't need
         G.verify_terminal_size();
-
+        
         auto tempkey = get_input();
         switch(tempkey)
         {
             case KEY_MENU:
                 open_menu("inHelp", &game_engine::inMenu_controller_inHelp);
                 break;
-//            case KEY_SPACE:
-//                // next page
-//            {
-//            }
+                //            case KEY_SPACE:
+                //                // next page
+                //            {
+                //            }
         }
     }
 }

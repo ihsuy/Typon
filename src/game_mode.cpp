@@ -463,7 +463,7 @@ void Game_mode::process_classic(Graphics &g, int& ch)
     
     if(incorrect_part_len==0)
     {
-        if(ch == KEY_DEL)
+        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
         {
             correct_part_len--;
             total_input.pop_back();
@@ -492,7 +492,7 @@ void Game_mode::process_classic(Graphics &g, int& ch)
     }
     else
     {
-        if(ch == KEY_DEL)
+        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
         {
             incorrect_part_len--;
         }
@@ -511,7 +511,7 @@ void Game_mode::process_challenge(Graphics &g, int& ch)
     
     if(incorrect_part_len==0)
     {
-        if(ch == KEY_DEL)
+        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
         {
             correct_part_len--;
             total_input.pop_back();
@@ -540,7 +540,7 @@ void Game_mode::process_challenge(Graphics &g, int& ch)
     }
     else
     {
-        if(ch == KEY_DEL)
+        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
         {
             incorrect_part_len--;
         }
@@ -557,7 +557,7 @@ void Game_mode::mock_process_nocolor(Graphics &g, int& ch)
 {
     if(incorrect_part_len==0)
     {
-        if(ch == KEY_DEL)
+        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
         {
             correct_part_len--;
         }
@@ -576,7 +576,7 @@ void Game_mode::mock_process_nocolor(Graphics &g, int& ch)
     }
     else
     {
-        if(ch == KEY_DEL)
+        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
         {
             incorrect_part_len--;
         }
@@ -649,7 +649,7 @@ void Game_mode::update_mock_display_nocolor(Graphics &g)
 //
 //    if(incorrect_part_len==0)
 //    {
-//        if(ch == KEY_DEL)
+//        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
 //        {
 //            if(correct_part_len!=0)
 //            {
@@ -727,7 +727,7 @@ void Game_mode::update_mock_display_nocolor(Graphics &g)
 //    }
 //    else
 // {
-//        if(ch == KEY_DEL)
+//        if(ch == KEY_DEL or ch ==KEY_BACKSPACE or ch == '\b')
 //{
 //            incorrect_part_len--;
 //        }

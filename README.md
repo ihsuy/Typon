@@ -61,6 +61,8 @@ git clone https://github.com/ihsuy/Typon
 ```
 Run the makefile
 ```sh
+cd Typon
+
 make
 ```
 
@@ -304,8 +306,10 @@ Current versions only support changing **Typon**'s color setting by modifying Te
 
 ## Credits
 
-A heartful thank you to Anna for great suggestions and tips. :heart:  
-A special thank you to Kyu for correcting my broken English. :muscle:  
+Heartful thank you to: 
+- Anna for great suggestions and tips. :heart: 
+- Kyu for correcting my broken English. :muscle:  
+- [shadowmourne](https://github.com/shadowmourne) for very helpful coding advices. :eyeglasses:
 
 ## License
 Licensed under the GNU General Public License v3.0.
