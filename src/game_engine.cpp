@@ -1736,7 +1736,7 @@ void game_engine::help()
     vector<pair<string, string>> About =
     {
         {"For more helps please visit:\n", "magenta"},
-        {"http://abc.com", "yellow"},
+        {"https://github.com/ihsuy/Typon", "yellow"},
         {"\n\nAbout Challenge Mode", "magenta"},
         {"\nIf you start a ", "white"},
         {"Game", "green"},
