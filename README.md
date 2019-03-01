@@ -61,6 +61,8 @@ git clone https://github.com/ihsuy/Typon
 ```
 Run the makefile
 ```sh
+cd Typon
+
 make
 ```
 
