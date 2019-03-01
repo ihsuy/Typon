@@ -72,7 +72,7 @@ After make, you can choose to install Typon to your `usr/local/bin` directory an
 ```sh
 make install
 ```
-> **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#quote-naming-rules).  
+> **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#customize-your-quotes-directory).  
 
 **You're all set, enjoy typing!**
 
@@ -221,7 +221,7 @@ Typon can read in any text file(.txt) and lets you practice typing with it, but 
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
 </p>  
 
-As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the **quotes directory** under **Typon**'s root directory and title them according to a certain naming rules.
+As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the **quotes directory** under **Typon**'s root directory and title them according to a certain [naming rules](#quote-naming-rules.
 
 If you forgot your default Typon root directory , use this flag to locate it:  
 ```
