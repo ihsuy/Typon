@@ -1,12 +1,5 @@
-//
-//  Graphics.cpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2019/01/22.
-//  Copyright © 2019 Yushi Qiu. All rights reserved.
-//
 
-#include "Graphics.hpp"
+#include "graphics.hpp"
 
 map<int, string> keyboard_lower = {
     {KEY_1, "1"}, {KEY_2, "2"}, {KEY_3, "3"}, {KEY_4, "4"}, {KEY_5, "5"},
