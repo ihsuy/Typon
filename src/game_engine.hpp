@@ -1,18 +1,11 @@
-//
-//  game_engine.hpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2018/12/25.
-//  Copyright © 2018 Yushi Qiu. All rights reserved.
-//
 
 #ifndef game_engine_hpp
 #define game_engine_hpp
 
-#include "Game_mode.hpp"
+#include "game_mode.hpp"
 #include "special_keys.cpp"
 #include "timer.hpp"
-#include "Graphics.hpp"
+#include "graphics.hpp"
 #include "save_handler.hpp"
 #include "quote_loader.hpp"
 #include "tools.hpp"

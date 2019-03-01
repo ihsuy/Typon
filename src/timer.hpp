@@ -1,16 +1,10 @@
-//
-//  timer.hpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2019/01/15.
-//  Copyright © 2019 Yushi Qiu. All rights reserved.
-//
 
 #ifndef timer_hpp
 #define timer_hpp
 
 #include <chrono>
 #include <vector>
+#include <stdexcept>
 
 using namespace std;
 

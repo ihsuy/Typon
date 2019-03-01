@@ -1,13 +1,6 @@
-//
-//  Graphics.hpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2019/01/22.
-//  Copyright © 2019 Yushi Qiu. All rights reserved.
-//
 
-#ifndef Graphics_hpp
-#define Graphics_hpp
+#ifndef graphics_hpp
+#define graphics_hpp
 
 #include "special_keys.cpp"
 #include "tools.hpp"
@@ -133,7 +126,7 @@ struct Graphics
     
     /*--------------------*/
     // write text
-//    void add_msg(const vector<string>& contents, const vector<string> color, const string& win, const bool& clear_prev=true, const bool& refresh=true);
+    //    void add_msg(const vector<string>& contents, const vector<string> color, const string& win, const bool& clear_prev=true, const bool& refresh=true);
     
     void text_add_str(const string& str, const string& c, const bool clear_prev=false, const bool& refresh=false);
     
@@ -216,5 +209,4 @@ struct Graphics
     Graphics(const int& user_defined_w, const int& user_defined_h);
 };
 
-#endif /* Graphics_hpp */
-
+#endif

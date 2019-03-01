@@ -1,10 +1,3 @@
-//
-//  special_keys.cpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2018/12/27.
-//  Copyright © 2018 Yushi Qiu. All rights reserved.
-//
 
 #ifndef special_keys_cpp
 #define special_keys_cpp

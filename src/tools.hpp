@@ -1,10 +1,3 @@
-//
-//  tools.hpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2019/02/01.
-//  Copyright © 2019 Yushi Qiu. All rights reserved.
-//
 
 #ifndef tools_hpp
 #define tools_hpp

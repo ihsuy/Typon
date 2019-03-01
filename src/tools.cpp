@@ -1,10 +1,3 @@
-//
-//  tools.cpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2019/02/01.
-//  Copyright © 2019 Yushi Qiu. All rights reserved.
-//
 
 #include "tools.hpp"
 

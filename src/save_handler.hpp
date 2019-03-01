@@ -1,10 +1,3 @@
-//
-//  save_handler.hpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2019/01/30.
-//  Copyright © 2019 Yushi Qiu. All rights reserved.
-//
 
 #ifndef save_handler_hpp
 #define save_handler_hpp
@@ -17,6 +10,7 @@
 #include <iostream>
 #include <iomanip>
 #include <chrono>
+#include <algorithm>
 #include <string>
 #include <map>
 #include <vector>
