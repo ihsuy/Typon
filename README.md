@@ -312,4 +312,5 @@ Heartful thank you to:
 - [shadowmourne](https://github.com/shadowmourne) for very helpful coding advices. :eyeglasses:
 
 ## License
+Copyright (c) Yushi Qiu. All rights reserved.
 Licensed under the GNU General Public License v3.0.
