@@ -1,7 +1,7 @@
-#ifndef Game_mode_hpp
-#define Game_mode_hpp
+#ifndef game_mode_hpp
+#define game_mode_hpp
 
-#include "Graphics.hpp"
+#include "graphics.hpp"
 #include "tools.hpp"
 
 #include <string>
@@ -145,4 +145,4 @@ struct Game_mode
     
 };
 
-#endif /* Game_mode_hpp */
+#endif
