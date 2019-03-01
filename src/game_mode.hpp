@@ -1,15 +1,7 @@
-//
-//  Game_Mode.hpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2018/12/25.
-//  Copyright © 2018 Yushi Qiu. All rights reserved.
-//
+#ifndef game_mode_hpp
+#define game_mode_hpp
 
-#ifndef Game_mode_hpp
-#define Game_mode_hpp
-
-#include "Graphics.hpp"
+#include "graphics.hpp"
 #include "tools.hpp"
 
 #include <string>
@@ -153,4 +145,4 @@ struct Game_mode
     
 };
 
-#endif /* Game_mode_hpp */
+#endif
