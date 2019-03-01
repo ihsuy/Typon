@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++11
-LDLIB = -lncurses
+LDLIB = -lncurses -lpthread
 
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -15,7 +15,7 @@ objects = main.o \
           game_mode.o timer.o tools.o special_keys.o
 
 typon: $(objects) 
-	$(CXX) -o typon $(CXXFLAGS) $(LDLIB) $(objects)
+	$(CXX) -o typon $(CXXFLAGS) $(objects) $(LDLIB)
 	mv *.o build/
 
 main.o: ./src/main.cpp 
