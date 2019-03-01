@@ -1,4 +1,4 @@
-#include "Game_mode.hpp"
+#include "game_mode.hpp"
 
 using namespace std;
 char Game_mode::key_replace(char in, char tar, char sub)
