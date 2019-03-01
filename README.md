@@ -221,7 +221,7 @@ Typon can read in any text file(.txt) and lets you practice typing with it, but 
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
 </p>  
 
-As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the **quotes directory** under **Typon**'s root directory and title them according to a certain [naming rules](#quote-naming-rules.
+As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the **quotes directory** under **Typon**'s root directory and title them according to a certain [naming rules](#quote-naming-rules).
 
 If you forgot your default Typon root directory , use this flag to locate it:  
 ```
@@ -244,7 +244,7 @@ typon -path /Users/me/new_location/
 > **Note**: I didn't feel the necessity for making MAX_ID an optional value, however, it can be easily modified in the 
 >           source code. 
 
-Any text files that are not in [**Typon's quotes directory**](#typon-file-structure) or does not follow the aforementioned [**Naming rules**](#quote-naming-rules) will be ignored by Typon.
+Any text files that are not in [**Typon's quotes directory**](#typon-file-structure) or does not follow the aforementioned [**naming rules**](#quote-naming-rules) will be ignored by Typon.
 
 Since Typon doesn't keep a copy of the content of all the text files, it only recognizes the **quote ID**. If the ID isn't changed, Typon assumes that its contents remain the same.
 
