@@ -1,10 +1,3 @@
-//
-//  save_handler.cpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2019/01/30.
-//  Copyright © 2019 Yushi Qiu. All rights reserved.
-//
 
 #include "save_handler.hpp"
 

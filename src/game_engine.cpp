@@ -1,10 +1,4 @@
-//
-//  game_engine.cpp
-//  new_ytype
-//
-//  Created by Yushi Qiu on 2018/12/25.
-//  Copyright © 2018 Yushi Qiu. All rights reserved.
-//
+
 #include "game_engine.hpp"
 
 using namespace std;

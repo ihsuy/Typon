@@ -2,7 +2,7 @@
 #include "tools.hpp"
 #include <iostream>
 #include <fstream>
-#include <sys/stat.h>
+#include <cstring>
 using namespace std;
 
 int main(int argc, const char *argv[])
@@ -101,3 +101,4 @@ int main(int argc, const char *argv[])
     {
         Exit(1, "Quit due to: Uncaught unexpected exception.");
     }
+}
