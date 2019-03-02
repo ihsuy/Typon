@@ -307,9 +307,9 @@ Current versions only support changing **Typon**'s color setting by modifying Te
 ## Credits
 
 Heartful thank you to: 
-- Anna for great suggestions and tips. :heart: 
+- Anna for great design suggestions and tips. :heart: 
 - Kyu for correcting my broken English. :muscle:  
-- [shadowmourne](https://github.com/shadowmourne) for very helpful coding advices. :eyeglasses:
+- [farleyoli](https://github.com/farleyoli) and [shadowmourne](https://github.com/shadowmourne) for very helpful coding advices. :eyeglasses:
 
 ## License
 Copyright (c) Yushi Qiu. All rights reserved.  
