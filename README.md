@@ -40,7 +40,7 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 - **Works purely on terminal**
 
-- **No complicated [installation](#installation) necessary**
+- **No complicated [installation](#installation) necessary** (support run or install using only the binary)
 
 - **Compiles and runs without changes on most common flavors of Unix (MacOS included)**
 
