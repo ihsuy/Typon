@@ -53,7 +53,7 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 [NCurses](https://www.gnu.org/software/ncurses) 
 
-### Install From Source
+### Option 1: Install From Source
 
 Open your terminal in your preferred directory and clone this repository:
 ```sh
@@ -61,20 +61,39 @@ git clone https://github.com/ihsuy/Typon
 ```
 Run the makefile
 ```sh
-cd Typon
-
+cd Typon/Typon_src/
 make
 ```
+Run!
+```sh
+./typon
+```
+Optional: After make, you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
+```sh
+make install
+```
 
-**Optional:**  
+### Option 2: Install From Binary
 
-After make, you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
+Open your terminal in your preferred directory and clone this repository:
+```sh
+git clone https://github.com/ihsuy/Typon
+```  
+Go to the directory where the Typon binary is located:
+```sh
+cd Typon/Typon_bin/
+```
+Since Typon is already built into binary, you're all set!
+```sh
+./typon
+```
+you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
 ```sh
 make install
 ```
 > **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#customize-your-quotes-directory).  
 
-**You're all set, enjoy typing!**
+**Enjoy typing!**
 
 ---  
 
