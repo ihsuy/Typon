@@ -26,7 +26,7 @@ Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a terminal em
 </p>
 
 If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
-If you manage to finish before the opponent does, **Congratulations!!!**, you've beaten your previous **Best record**. 
+If you manage to finish before the opponent does, **Congratulations!!!** you've beaten your previous **Best record**. 
 
 For more **details** about the **Challenge Mode** [**click here**](#contest-your-previous-best-record) .
 
