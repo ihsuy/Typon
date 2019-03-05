@@ -4,7 +4,7 @@
 
 # Typon
 
-Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a terminal emulator.  
+Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a (linux/MacOS) terminal emulator. 
 
 
 <p align="left">
