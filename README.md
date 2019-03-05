@@ -323,6 +323,12 @@ Forceably resizing **Typon** to an invalid size will cause **Typon** to quit.
 
 Current versions only support changing **Typon**'s color setting by modifying Terminal's color definition.
 
+## Contact
+
+If you have any suggestions or questions,  
+Please email me at: **jooehisaishi@gmail.com**
+Thank you!
+
 ## Credits
 
 Heartful thank you to: 
