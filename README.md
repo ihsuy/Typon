@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/logo2.png" width="350">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/logo2.png" width="300">
 </p>
 
 # Typon
