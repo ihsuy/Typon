@@ -49,9 +49,9 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 ## Installation
 
-### Dependencies
+#### Dependencies 
 
-[NCurses](https://www.gnu.org/software/ncurses) 
+[NCurses](https://www.gnu.org/software/ncurses) (do not need for option 2)
 
 ### Option 1: Install From Source
 
