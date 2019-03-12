@@ -1,10 +1,10 @@
 <p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/logo2.png" width="350">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/logo2.png" width="300">
 </p>
 
 # Typon
 
-Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a terminal emulator.  
+Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a (linux/MacOS) terminal emulator. 
 
 
 <p align="left">
@@ -26,7 +26,7 @@ Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a terminal em
 </p>
 
 If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
-If you manage to finish before the opponent does, **Congratulations!!!**, you've beaten your previous **Best record**. 
+If you manage to finish before the opponent does, **Congratulations**, you've beaten your previous **Best record**. 
 
 For more **details** about the **Challenge Mode** [**click here**](#contest-your-previous-best-record) .
 
@@ -40,7 +40,7 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 - **Works purely on terminal**
 
-- **No complicated [installation](#installation) necessary**
+- **No complicated [installation](#installation) necessary** (support run or install using only the binary)
 
 - **Compiles and runs without changes on most common flavors of Unix (MacOS included)**
 
@@ -49,11 +49,11 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 ## Installation
 
-### Dependencies
+#### Dependencies 
 
-[NCurses](https://www.gnu.org/software/ncurses) 
+[NCurses](https://www.gnu.org/software/ncurses) (for MacOS binary execuatble please see option 2)
 
-### Install From Source
+### Option 1: Install From Source
 
 Open your terminal in your preferred directory and clone this repository:
 ```sh
@@ -61,20 +61,39 @@ git clone https://github.com/ihsuy/Typon
 ```
 Run the makefile
 ```sh
-cd Typon
-
+cd Typon/Typon_src/
 make
 ```
-
-**Optional:**  
-
-After make, you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
+Run!
+```sh
+./typon
+```
+Optional: After make, you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
 ```sh
 make install
 ```
-> **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#quote-naming-rules).  
 
-**You're all set, enjoy typing!**
+### Option 2: Install From Binary
+(binary files are currently only available for MacOS... linux in making...)  
+Open your terminal in your preferred directory and clone this repository:
+```sh
+git clone https://github.com/ihsuy/Typon
+```  
+Go to the directory where the Typon binary is located:
+```sh
+cd Typon/Typon_bin/
+```
+Since Typon is already built into binary, you're all set!
+```sh
+./typon
+```
+you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
+```sh
+make install
+```
+> **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#customize-your-quotes-directory).  
+
+**Enjoy typing!**
 
 ---  
 
@@ -221,7 +240,7 @@ Typon can read in any text file(.txt) and lets you practice typing with it, but 
   <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/file%20struct.png" width="550" height="320">
 </p>  
 
-As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the **quotes directory** under **Typon**'s root directory and title them according to a certain naming rules.
+As demonstrated above, in order to make your text files accessible by Typon, you need to store them in the **quotes directory** under **Typon**'s root directory and title them according to a certain [naming rules](#quote-naming-rules).
 
 If you forgot your default Typon root directory , use this flag to locate it:  
 ```
@@ -244,7 +263,7 @@ typon -path /Users/me/new_location/
 > **Note**: I didn't feel the necessity for making MAX_ID an optional value, however, it can be easily modified in the 
 >           source code. 
 
-Any text files that are not in [**Typon's quotes directory**](#typon-file-structure) or does not follow the aforementioned [**Naming rules**](#quote-naming-rules) will be ignored by Typon.
+Any text files that are not in [**Typon's quotes directory**](#typon-file-structure) or does not follow the aforementioned [**naming rules**](#quote-naming-rules) will be ignored by Typon.
 
 Since Typon doesn't keep a copy of the content of all the text files, it only recognizes the **quote ID**. If the ID isn't changed, Typon assumes that its contents remain the same.
 
@@ -304,12 +323,19 @@ Forceably resizing **Typon** to an invalid size will cause **Typon** to quit.
 
 Current versions only support changing **Typon**'s color setting by modifying Terminal's color definition.
 
+## Contact
+
+If you have any suggestions or questions,  
+Please email me at: **jooehisaishi@gmail.com**
+Thank you!
+
 ## Credits
 
 Heartful thank you to: 
-- Anna for great suggestions and tips. :heart: 
-- Kyu for correcting my broken English. :muscle:  
-- [shadowmourne](https://github.com/shadowmourne) for very helpful coding advices. :eyeglasses:
+- Anna for great design suggestions and tips.
+- Kyu for correcting my broken English.
+- [farleyoli](https://github.com/farleyoli) and [shadowmourne](https://github.com/shadowmourne) for very helpful coding advices.
 
 ## License
+Copyright (c) Yushi Qiu. All rights reserved.  
 Licensed under the GNU General Public License v3.0.
