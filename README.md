@@ -136,7 +136,7 @@ On the **End Screen**, Typon shows all in-game inputs including those incorrect 
 The formula that Typon used to calculate WPM is:
 
 <p align="middle">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/wpm_formula.png">
+  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/wpm_formula.gif" width=250>
 </p>
 
 #
