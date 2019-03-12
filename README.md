@@ -51,7 +51,7 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 #### Dependencies 
 
-[NCurses](https://www.gnu.org/software/ncurses) (do not need for option 2)
+[NCurses](https://www.gnu.org/software/ncurses) (for MacOS binary execuatble please see option 2)
 
 ### Option 1: Install From Source
 
@@ -74,7 +74,7 @@ make install
 ```
 
 ### Option 2: Install From Binary
-
+(binary files are currently only available for MacOS... linux in making...)  
 Open your terminal in your preferred directory and clone this repository:
 ```sh
 git clone https://github.com/ihsuy/Typon
