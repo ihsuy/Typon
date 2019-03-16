@@ -64,17 +64,19 @@ Run the makefile
 cd Typon/Typon_src/
 make
 ```
-Run!
+Run Typon
 ```sh
 ./typon
 ```
 Optional: After make, you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
 ```sh
-make install
+[sudo] make install
 ```
 
 ### Option 2: Install From Binary
-(binary files are currently only available for MacOS... linux in making...)  
+
+**(binary file for linux added)**  
+
 Open your terminal in your preferred directory and clone this repository:
 ```sh
 git clone https://github.com/ihsuy/Typon
@@ -83,17 +85,18 @@ Go to the directory where the Typon binary is located:
 ```sh
 cd Typon/Typon_bin/
 ```
-Since Typon is already built into binary, you're all set!
+Since Typon is already built into binary, you're all set.  
+**Note: To run on Linux system please rename ``typon_linux`` to ``typon``**: `` mv typon_linux typon``
 ```sh
 ./typon
 ```
 you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
 ```sh
-make install
+[sudo] make install
 ```
 > **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#customize-your-quotes-directory).  
 
-**Enjoy typing!**
+**Enjoy typing**
 
 ---  
 
