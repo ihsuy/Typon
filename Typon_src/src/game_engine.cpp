@@ -210,12 +210,13 @@ void game_engine::game_intro(const string& msg)
             cSkip();
         }
         
-        // in game_intro, only 4 characters have meaning
+        // in game_intro, only 5 characters have meaning
         // 1. first letter of current quote -> start game
         //    (with the first letter already entered)
         // 2. KEY_SPACE -> start game
         // 3. KEY_0 -> try to enter challenge mode
         // 4. KEY_MENU -> open menu
+        // 5. KEY_DASH -> go to
         if(current_text_input == current_quote[0])
         {
             inner_stopwatch.start();
