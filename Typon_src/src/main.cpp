@@ -20,7 +20,7 @@ int main(int argc, const char *argv[])
         }
         else{
             for(auto i = 1; i < argc; ++i)
-            {   // available flags: -path and -whereami
+            {   // available flags: -path -resize
                 if(!strcmp(argv[i], "-path"))
                 {
                     if(i != argc-1)
@@ -67,7 +67,7 @@ int main(int argc, const char *argv[])
                                              "\techo \"Typon files location: "+ string(real_path) + "\"\n"
                                              "elif [ \"$1\" = \"-new\" ]; then\n"
                                              "\t:\n"
-                                             "elif [ \"$1\" != \"\" ]; then\n"
+                                             "elif [ \"$1\" != \"-resize\" ]; then\n"
                                              "\t" + real_path + "/typon $1 $2 $3 $4 $5\n"
                                              "else\n"
                                              "\t" + real_path + "/typon -path " + real_path+
