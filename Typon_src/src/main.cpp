@@ -67,8 +67,8 @@ int main(int argc, const char *argv[])
                                              "\techo \"Typon files location: "+ string(real_path) + "\"\n"
                                              "elif [ \"$1\" = \"-new\" ]; then\n"
                                              "\t:\n"
-                                             "elif [ \"$1\" != \"-resize\" ]; then\n"
-                                             "\t" + real_path + "/typon $1 $2 $3 $4 $5\n"
+                                             "elif [ \"$1\" != \"\" ]; then\n"
+                                             "\t" + real_path + "/typon $1 $2 $3 $4 $5 -path " + real_path + "\n"
                                              "else\n"
                                              "\t" + real_path + "/typon -path " + real_path+
                                              "\nfi");
