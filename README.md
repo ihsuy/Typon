@@ -75,7 +75,7 @@ Optional: After make, you can choose to install Typon to your `usr/local/bin` di
 
 ### Option 2: Install From Binary
 
-**(binary file for linux added)**  
+**(binary file for linux added. However if it doesn't run normally on your computer, try option1)**  
 
 Open your terminal in your preferred directory and clone this repository:
 ```sh
