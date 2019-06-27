@@ -335,9 +335,7 @@ Thank you!
 ## Credits
 
 Heartful thank you to: 
-- Anna for great design suggestions and tips.
-- Kyu for correcting my broken English.
-- [farleyoli](https://github.com/farleyoli) and [shadowmourne](https://github.com/shadowmourne) for very helpful coding advices.
+- Anna and [farleyoli](https://github.com/farleyoli) for great suggestions and advices.
 
 ## License
 Copyright (c) Yushi Qiu. All rights reserved.  
