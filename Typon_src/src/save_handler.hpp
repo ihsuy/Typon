@@ -77,9 +77,9 @@ struct save_handler
     const int nchar_precision = 15;
 
 
-
     save_handler(const string& my_addr);
 
+    // check quote size and performance record size
     void prepare_to_save(const vector<int>& quote_order);
 
     void lookFor_saveFiles();
@@ -97,12 +97,14 @@ struct save_handler
 
     void update_nchar(const vector<int>& all_inputs);
 
+    // Deprecated
     //    vector<string> gloader_cache;
     //        long long cache_range = 250;
     //        long long cache_start = 0;
     //        long long cache_end= 0;
-    //    vector<string> gloader_windowed(const long long& start_i, const long long& end_i, const bool& include_header=true);
-
+    //    vector<string> gloader_windowed(const long long& start_i, 
+    //                                    const long long& end_i, 
+    //                                    const bool& include_header=true);
 };
 
 #endif /* save_handler_hpp */

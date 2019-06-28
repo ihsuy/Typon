@@ -1,61 +1,56 @@
-
 #include "game_engine.hpp"
 
 using namespace std;
 
-/*--------------------------------------------------*/
-// default initializer
-game_engine::game_engine(const int& id_max, const string& user_defined_quote_dir, const int& user_defined_w, const int& user_defined_h)
-    : ID_MAX(id_max), G(user_defined_w, user_defined_h), saver(user_defined_quote_dir),
-      q_loader(id_max, user_defined_quote_dir)
-{   // get total number of quote files in my_path
-    // and load them to quote_order
+game_engine::game_engine(const int& id_max,
+                         const string& user_defined_quote_dir,
+                         const int& user_defined_w,
+                         const int& user_defined_h,
+                         const bool& shuffle)
+    : ID_MAX(id_max),
+      G(user_defined_w, user_defined_h),
+      saver(user_defined_quote_dir),
+      q_loader(id_max, user_defined_quote_dir) {
     q_loader.load_quoteDatabase_info(quote_order, quoteDatabase_size, isDemo);
 
-    // check quote size and performance record size
-    if (not isDemo) saver.prepare_to_save(quote_order);
+    if (not isDemo) {
+        saver.prepare_to_save(quote_order);
+    }
+    else {
+        assert(demo_quote.size() > min_lc);
+    }
 
-    if (do_shuffle) shuffle_quotes(quote_order);
-
-    assert(demo_quote.size() > 2);
+    if (shuffle) {
+        shuffle_quotes(quote_order);
+    }
 }
 
-/*--------------------------------------------------*/
-// core engine logic
-void game_engine::run()
-{
+void game_engine::run() {
     G.init_graphics();
-
     load_graphic_properties();
-
-    while (true)
-    {
+    while (true) {
         next_quote();
-
-        game_intro("Press first letter or SPACE to begin");
-
-        if (not skip_game)
-        {
+        game_intro(game_intro_msg);
+        if (not skip_game) {
             game_begin();
-
             inGame_loop();
-
             game_end();
-
-            game_outro("Press r for replay, press SPACE to continue");
+            game_outro(game_outro_msg);
         }
         finalize();
     }
 }
 
-void game_engine::load_graphic_properties()
-{   // needed later for controlling menu behaviour
+void game_engine::load_graphic_properties() {
     nOption_menu_inGame = G.inGame_menu_options.size();
     nOption_menu_inHistory = G.inHistory_menu_options.size();
     nOption_menu_preGame = G.preGame_menu_options.size();
     nOption_menu_postGame = G.postGame_menu_options.size();
     nOption_menu_inReplay = G.inReplay_menu_options.size();
+
     max_hdisplay_nline = G.inner_win_h - 1;
+
+    max_text_nChar = (G.inner_win_w - 2)*G.inner_win_h;
 
     auto temp_nondate_w = ((G.inner_win_w - fixed_date_w) / 3) - 1; // don't be just fit
     int id_w = ((temp_nondate_w > max_nondate_w) ? max_nondate_w : temp_nondate_w) - 2;
@@ -68,53 +63,38 @@ void game_engine::load_graphic_properties()
     inHistory_quoteGlancee_len = G.inner_info_w * 2 / 3;
 }
 
-/*--------------------*/
-// load next quote
-void game_engine::next_quote(const int& tar_id)
-{   // argument tar_id has default val -1
-    // which means there's no specific
-    // quote id that the user wants to load
-    // so we increment it by one
-    // otherwise if next_quote is call with a
-    // specific tar_id, load that quote
 
-    if (tar_id < -1)
-    {
+void game_engine::next_quote(const int& tar_id) {
+    // if tar_id has default val -1
+    // meaning quotes intended to be loaded randomly
+    // (need to increase by 1)
+    // else if next_quote is call with a
+    // specific tar_id, load that quote
+    if (tar_id < -1) {
         Exit(1, ("game_engine::next_quote: invalid tar_id: "
                  + to_string(tar_id)
                  + " tar_id can't be lesser than -1."));
     }
 
-    // do not load quote using new quote_id
-    // if user wants to restart the game
-    if (not restart_game)
-    {
-        if (tar_id != -1)
-        {   // if tar_id is specifically set
-            // find index of this id in quote_order
-            // and set quoteOrder_index to its value
+    // if not restarted, new quote id needs to be generated
+    if (not restart_game) {
+        // if tar_id is specifically set
+        // search this id in quote_order, and if exist, load it
+        // otherwise, load quotes in shuffled order
+        if (tar_id != -1) {
             auto tar = find(quote_order.begin(), quote_order.end(), tar_id);
-
-            if (tar == quote_order.end())
-            {   // no such quote exists
+            if (tar == quote_order.end()) {
                 Exit(1, "bad tar_id: Can't find quote" + to_string(tar_id));
             }
-
             quoteOrder_index = (int)distance(quote_order.begin(), tar);
         }
-        else
-        {   // if tar_id is the default value
-            // increment index by 1
+        else {
             quoteOrder_index = (quoteOrder_index + 1) % quoteDatabase_size;
         }
     }
 
     load_current_quote();
 
-    // load current best record, even if
-    // the game restarted, since last play
-    // could have modified the record to
-    // this quote
     if (not isDemo)
     {
         best_record = saver.pload(quote_order[quoteOrder_index]);
@@ -124,63 +104,52 @@ void game_engine::next_quote(const int& tar_id)
         best_record = demo_best_record;
     }
 
-    // load quote info to game
+    // hand quote info to game logic for behavior calculation
     current_game.load_game_info(current_quote, current_lc, best_record.first, G.inner_win_w);
 
-    // restart_game variable should be set
-    // to false everytime a game restarted,
-    // since it's only reasonable to restart
-    // game once at once
+    // restart_game should be set to false everytime a game restarted
     restart_game = false;
 }
 
-// reorder quote_order randomly
-void game_engine::shuffle_quotes(vector<int>& quote_order)
-{
-    // generate seed based on time
+
+void game_engine::shuffle_quotes(vector<int>& quote_order) {
     auto seed = (int)chrono::system_clock::now().time_since_epoch().count();
-    // std::shuffle the orders using the seed
+    // shuffle the orders using the seed generated based on time
     shuffle(quote_order.begin(), quote_order.end(), (default_random_engine(seed)));
 }
 
 
-void game_engine::load_current_quote()
-{
-    if (not isDemo)
-    {
+void game_engine::load_current_quote() {
+    if (not isDemo) {
         current_quote = q_loader.load_quote(quote_order[quoteOrder_index]);
     }
-    else
-    {
+    else {
         current_quote = demo_quote;
     }
 
     current_lc = current_quote.length();
 
-    if (current_lc == 0)
-    {
+    // before proceeding, make sure if quote is not empty, 
+    // not too short or too long
+    if (current_lc == 0) {
         G.info_mvadd_str(0, 0,
                          "Quote" + to_string(quote_order[quoteOrder_index]) +
                          " not found or is empty.\n",
                          intro_warning_color, true, true);
     }
-    else if (current_lc <= min_lc)
-    {
+    else if (current_lc <= min_lc) {
         G.info_mvadd_str(0, 0, "Quote(" + to_string(quote_order[quoteOrder_index]) +
                          ") is too short. (has to be at least " +
                          to_string(min_lc) + " letters)\n",
                          intro_warning_color, true, true);
     }
-
-    // check if current quote is too long to display
-    else if (current_lc >= (G.inner_win_w - 2)*G.inner_win_h)
-    {
+    else if (current_lc >= max_text_nChar) {
         G.info_mvadd_str(0, 0, "Quote_id: " + to_string(quote_order[quoteOrder_index])
                          + " is too long.\n",
                          intro_warning_color, true, true);
     }
-    else
-    {
+    else {
+        // good to proceed
         return;
     }
 
@@ -188,15 +157,10 @@ void game_engine::load_current_quote()
     intro_info_wait = true;
 }
 
-void game_engine::game_intro(const string& msg)
-{   // skip_game is ALWAYS RESET TO FALSE IN FINALIZE()
-    // which enables program to enter while loop
-    // below everytime
-
+void game_engine::game_intro(const string& msg){   
+    // skip_game need to be before game_intro
     mode = "Classic";
-
-    while (not skip_game)
-    {
+    while (not skip_game){
         init_mode(msg);
 
         current_game.intro_screen(G);
@@ -205,8 +169,7 @@ void game_engine::game_intro(const string& msg)
 
         inGame_get_input();
 
-        if (invalid_quote)
-        {
+        if (invalid_quote){
             cSkip();
         }
 
@@ -217,15 +180,13 @@ void game_engine::game_intro(const string& msg)
         // 3. KEY_0 -> try to enter challenge mode
         // 4. KEY_MENU -> open menu
         // 5. KEY_DASH -> go to
-        if (current_text_input == current_quote[0])
-        {
+        if (current_text_input == current_quote[0]){
             inner_stopwatch.start();
             progress();
             return;
         }
 
-        switch (current_text_input)
-        {
+        switch (current_text_input){
         case KEY_SPACE:
             return;
         case KEY_0:
@@ -247,8 +208,8 @@ void game_engine::game_intro(const string& msg)
     }
 }
 
-void game_engine::init_mode(const string& msg)
-{   // 1. check if record exists for this quote ID
+void game_engine::init_mode(const string& msg){
+    // 1. check if record exists for this quote ID
     // 2. if it exists, check if time record and keyinput record have the same size
     //    if not ture, user may have accidentally damaged psave for this quote
     // 3. if test passes first case, check if record keyinput's size matches

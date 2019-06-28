@@ -1,4 +1,3 @@
-
 #ifndef game_engine_hpp
 #define game_engine_hpp
 
@@ -17,13 +16,24 @@
 #include <ctime>
 #include <thread>
 #include <utility>
-#include <map>
+#include <unordered_map>
 #include <algorithm>
 
 using namespace std;
 
-class game_engine
-{
+/*
+game_engine holds all logic and graphic components
+necessary for Typon to run.
+The engine uses mostly game_mode(logic), timer, graphics(painter),
+save_handler and quote_loader to perform variety of tasks.
+
+Example:
+    game_engine engine(id_max, quote_dir, w, h);
+    engine.run();
+*/
+class game_engine {
+    // guidiance messages that are meant to be
+    // displayed in the Info Window
     const string intro_bottom_msg = "Menu: tab | goto: hyphen | Challenge mode: 0 | Remove record: delete";
     const string inGame_bottom_msg = "Menu: tab";
     const string outro_bottom_msg = "Menu: tab | Replay: r";
@@ -34,17 +44,27 @@ class game_engine
     const string removeRecord_bottom_msg = "Confirm: y | Cancel: non-y";
     const string inHelp_bottom_msg = "Menu: tab";
 
+    // Other messages
+    const string game_intro_msg = "Press first letter or SPACE to begin";
+    const string game_outro_msg = "Press r for replay, press SPACE to continue";
 
+    // history column names and default ranking orders
+    const vector<string> header_choices{"ID", "Gross WPM", "Mistakes", "Date"};
+    unordered_map<string, bool> historyHeader_isAscend{
+        {"id", true},
+        {"wpm", false},
+        {"mistake", true},
+        {"date", true}
+    };
+
+    // color properties of messages
     const string intro_msg_color = "yellow";
     const string intro_warning_color = "black-yellow";
     const string outro_msg_color = "yellow";
-
     const string challenge_warning_color = "magenta";
-
     const string replay_over_msg_color = "yellow";
     const string now_replaying_color = "cyan";
     const string replay_keyboard_color = "white";
-
     const string inHistory_header_color = "yellow";
     const string inHistory_header_highlight_color = "yellow-blue";
     const string inHistory_record_color = "cyan";
@@ -53,46 +73,51 @@ class game_engine
     const string inHistory_pageNum_color = "yellow";
     const string inHistory_skipToQuote_msg_color = "black-yellow";
     const string stats_msg_color = "black-yellow";
-
     const string skipToQuote_msg_color = "yellow";
     const string skipToQuote_warning_color = "yellow";
-
     const string remove_record_msg_color = "black-yellow";
-
     const string help_n_tips_color = "white";
 
-    int inHistory_quoteGlancee_len;
-
-    const chrono::nanoseconds avg_overslept = chrono::nanoseconds(3480000); // system dependent
-    const double replay_skipToEnd_speed = 0.004;
-
-    const vector<string> header_choices{"ID", "Gross WPM", "Mistakes", "Date"};
-
-    map<string, bool> historyHeader_isAscend{
-        {"id", true},
-        {"wpm", false},
-        {"mistake", true},
-        {"date", true}
-    };
-
-    const int ID_MAX;
-
+    // demo quote is a toy quote to play with in "demo mode"
+    // NOTE: demo mode is activated only when there's no quotes is detected
     const string demo_quote = "There are no quotes in your \"quotes\" directory. Please add some quotes or correct the path to your quotes by using the \"-path\" flag.";
 
+    // Lag term for high resolution sleep
+    // this term is crucial for game replay and challenge
+    // mode accuracy
+    // NOTE: Could be System Dependent
+    const chrono::nanoseconds avg_overslept = chrono::nanoseconds(3480000);
+
+    // time lag for skipToEnd option in "replay menu", the smaller
+    // the faster
+    const double replay_skipToEnd_speed = 0.002;
+
+    // minimum letter count, the minimum number of letters in a quote
+    // NOTE: Should never be less than 2
     const int min_lc = 2;
 
+    // column width parameters for nondate and date items in "History"
+    // max_nondate_w prevent nondate items' width from exceeding 30
+    // even when terminal is large enough.
+    // fixed_date_w controls date item's width and its fixed
     const int max_nondate_w = 30;
     const int fixed_date_w = 23;
 
-    /*--------------------------------------------------*/
 
+    // length of quote to show in Info Window when browsing records in History
+    // the value is decided base on the terminal size
+    int inHistory_quoteGlancee_len;
+
+    // maximum id that Typon will detect, in other words, Typon will only look
+    // for quotes with ID in the range [0, ID_MAX] inclusively
+    const int ID_MAX;
+
+    // container to allow temporary challenge mode in demo mode
+    // no records are saved under demo mode
     pair<double, pair<vector<long long>, vector<int>>> demo_best_record;
 
-    /*--------------------*/
     // path to quote files and save files (MUST end with'/')
     int quoteDatabase_size;
-
-    bool do_shuffle = true;
 
     vector<int> quote_order;
     unsigned int quoteOrder_index{};
@@ -105,15 +130,15 @@ class game_engine
     string mode;
     pair<double, pair<vector<long long>, vector<int>>> best_record;
 
-    bool current_game_terminated;
-    bool intro_info_wait;
+    bool current_game_terminated = false;
+    bool intro_info_wait = false;
     bool skip_game = false;
     bool restart_game = false;
     bool replaying = false;
     bool skip_replay = false;
-    bool inMenu;
-    bool inHistory;
-    bool inHelp;
+    bool inMenu = false;
+    bool inHistory = false;
+    bool inHelp = false;
 
     int current_text_input{};
     int current_menu_input{};
@@ -133,6 +158,8 @@ class game_engine
     long long gsave_page_num;
     vector<int> inHistory_header_spacing;
 
+    int max_text_nChar;
+
     int highlighted_quote_id;
     string history_order;
     string highlighted_quote_path;
@@ -144,23 +171,41 @@ class game_engine
     bool invalid_quote = false;
     bool isDemo = false;
 
-    /*--------------------------------------------------*/
-    // helpers
+
+    // Essential engine helpers
+
+    // Graphic backend
+    // all graphic display tasks delegated to it
     Graphics G;
 
+    // Game logic
+    // calculates and controls logical behaviors of Typon
     Game_mode current_game;
 
+    // Timer
+    // keep track of time and stores them
     timer inner_stopwatch;
 
+    // Save file handler
+    // saves, loads, and overwrite records and more
     save_handler saver;
+
+    // Quote loader
+    // loads quotes and does some minor fix on quote formats
     quote_loader q_loader;
 
-    /*--------------------------------------------------*/
-    // class utilites
+
+    // Engine utilities
+
     void load_graphic_properties();
-    void load_current_quote();
+
+    // reorder quote_order randomly
     void shuffle_quotes(vector<int>& quote_order);
 
+    // try to load quote using quoteOrder_index
+    void load_current_quote();
+
+    // load quote using target id
     void next_quote(const int& tar_id = -1);
 
     void game_intro(const string& msg);
@@ -175,7 +220,6 @@ class game_engine
     void timing_end();
 
     void finalize();
-
 
     int get_input();
     void inGame_get_input();
@@ -245,12 +289,12 @@ class game_engine
     void update_inGame_WPM();
 
 public:
-    /*--------------------------------------------------*/
-    // default initializer
-    game_engine(const int& id_max, const string& user_defined_quote_dir = ".", const int& user_defined_w = 0, const int& user_defined_h = 0);
+    // Default initializer
+    game_engine(const int& id_max, const string& user_defined_quote_dir = ".",
+                const int& user_defined_w = 0, const int& user_defined_h = 0,
+                const bool& shuffle = true);
 
-    /*--------------------------------------------------*/
-    // core engine logic
+    // Start engine
     void run();
 
 };

@@ -17,7 +17,7 @@ void quote_loader::load_quoteDatabase_info(vector<int>& quote_order, int& quoteD
     // if first quote exists, try to look
     // for other quotes. Quote names are
     // supposed to be quote[consecutive number].txt
-    for (auto i = 0; i < ID_RANGE; ++i)
+    for (auto i = 0; i <= ID_RANGE; ++i)
     {
         q_path = quote_dir + "quote" + to_string(i) + quote_format;
         open_file.open(q_path);

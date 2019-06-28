@@ -20,7 +20,8 @@ struct quote_loader
 	string quote_format = ".txt";
 
 	quote_loader(const int& id_range, const string& specified_quote_dir = "");
-
+    
+    // get total number of quote files in my_path and load them to quote_order
 	void load_quoteDatabase_info(vector<int>& quote_order, int& quoteDatabase_size, bool& isDemo);
 
 	string load_quote(const int& id, const int& len = 0);
