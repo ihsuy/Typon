@@ -64,19 +64,19 @@ Run the makefile
 cd Typon/Typon/
 make
 ```
-Run Typon
+Run Typon, or...  
 ```sh
 ./typon
 ```
-Optional: After building the binary, you can choose to install Typon to your `usr/local/bin` directory
+**Optional**: After building the binary, you can choose to **install** Typon to your `usr/local/bin` directory
 ```sh
 [sudo] make install
 ```
-Then run Typon becomes
+Now you could run Typon from anywhere with
 ```sh
 typon
 ```  
-now you could run **Typon** from anywhere
+
 
 > **Note**: a folder containing some random quotes is included, feel free to [add new ones or modify the old ones](#customize-your-quotes-directory).  
 
