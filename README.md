@@ -38,22 +38,22 @@ For more **details** about the **Challenge Mode** [**click here**](#contest-your
 
 - **Accepts literally [any quote](#more-about-text-file-contents) and always preserves the format.**
 
-- **Works purely on terminal**
+- **Works purely on terminal. Begin practicing with 1 command: `typon`**
 
-- **No complicated [installation](#installation) necessary** (support run or install using only the binary)
+- **No complicated [installation](#installation) necessary**  
 
-- **Compiles and runs without changes on most common flavors of Unix (MacOS included)**
+- **Compiles and runs without changes on most common flavors of Unix (MacOS included)**  
 
 
 #
 
 ## Installation
 
-#### Dependencies 
+#### Compile Dependencies 
 
-[NCurses](https://www.gnu.org/software/ncurses) (for MacOS binary execuatble please see option 2)
+[NCurses](https://www.gnu.org/software/ncurses)  
 
-### Option 1: Install From Source
+### Install From Source
 
 Open your terminal in your preferred directory and clone this repository:
 ```sh
@@ -61,42 +61,38 @@ git clone https://github.com/ihsuy/Typon
 ```
 Run the makefile
 ```sh
-cd Typon/Typon_src/
+cd Typon/Typon/
 make
 ```
 Run Typon
 ```sh
 ./typon
 ```
-Optional: After make, you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
+Optional: After building the binary, you can choose to install Typon to your `usr/local/bin` directory
 ```sh
 [sudo] make install
 ```
-
-### Option 2: Install From Binary
-
-**(binary file for linux added. However if it doesn't run normally on your computer, try option1)**  
-
-Open your terminal in your preferred directory and clone this repository:
+Then run Typon becomes
 ```sh
-git clone https://github.com/ihsuy/Typon
+typon
 ```  
-Go to the directory where the Typon binary is located:
-```sh
-cd Typon/Typon_bin/
-```
-Since Typon is already built into binary, you're all set.  
-**Note: To run on Linux system please rename ``typon_linux`` to ``typon``**: `` mv typon_linux typon``
-```sh
-./typon
-```
-you can choose to install Typon to your `usr/local/bin` directory and run **Typon** from anywhere:
-```sh
-[sudo] make install
-```
-> **Note**: a folder containing 100 random quotes is included, feel free to [add new ones or modify the old ones](#customize-your-quotes-directory).  
+now you could run **Typon** from anywhere
+
+> **Note**: a folder containing some random quotes is included, feel free to [add new ones or modify the old ones](#customize-your-quotes-directory).  
+
 
 **Enjoy typing**
+
+---  
+
+### Useful flags
+
+**Resize**  
+`-resize [width][heigh]`  *(My favorite setting is width:75\~80 height: 23\~29)*  
+**Locate**  
+`-path`  
+**Disable Shuffling**  
+`-noshuffle`  
 
 ---  
 
@@ -250,21 +246,14 @@ If you forgot your default Typon root directory , use this flag to locate it:
 typon -path
 ```  
 
-The `-path [user defined path]` can also be used to manually set where typon search its quotes directory and save files:  
-```
-typon -path /Users/me/new_location/
-```  
-> **Note**: It is not recommended to change the path to Typon's root directory.
-
-
 #### Quote Naming Rules
 
 - Name of the text file must be of the form: **quote[ID].txt**
 - **ID** must be a non-negative integer ranging: **\[0, MAX_ID)**
 - **MAX_ID**, by default, is set to be: **3001**
 
-> **Note**: I didn't feel the necessity for making MAX_ID an optional value, however, it can be easily modified in the 
->           source code. 
+> **Note**: I didn't feel the necessity to make MAX_ID an optional value, however, it can be easily modified in the 
+>           [source code](https://github.com/ihsuy/Typon/blob/master/Typon_src/src/main.cpp). 
 
 Any text files that are not in [**Typon's quotes directory**](#typon-file-structure) or does not follow the aforementioned [**naming rules**](#quote-naming-rules) will be ignored by Typon.
 
