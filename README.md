@@ -14,7 +14,7 @@ Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a (linux/MacO
 #
 
 **With it, you can**  
-- [**Test your typing speed**](#regular-game-play)
+- [**Test your typing speed**](#regular-gameplay)
 - [**Keep your records and track your progress**](#track-your-progress)
 - [**Practice typing ANY customized quote**](#customize-your-quotes-directory) 
 - [**Have some extra fun by contesting your previous records**](#contest-your-previous-best-record)  
