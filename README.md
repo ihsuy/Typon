@@ -28,22 +28,7 @@ Typon(タイポン|Tai-Pon) is a typing practice tool that runs on a (linux/MacO
 If you start a Game under **Challenge Mode**, the opponent's text cursor will appear and start a **Race** with you.  
 If you manage to finish before the opponent does, **Congratulations**, you've beaten your previous **Best record**. 
 
-For more **details** about the **Challenge Mode** [**click here**](#contest-your-previous-best-record) .
-
-#
-
-### Features  
-
-- **Completely offline**
-
-- **Accepts literally [any quote](#more-about-text-file-contents) and always preserves the format.**
-
-- **Works purely on terminal. Begin practicing with 1 command: `typon`**
-
-- **No complicated [installation](#installation) necessary**  
-
-- **Compiles and runs without changes on most common flavors of Unix (MacOS included)**  
-
+Know more about the [**Challenge Mode**](#contest-your-previous-best-record) .
 
 #
 
@@ -96,11 +81,7 @@ typon
 
 ---  
 
-## Regular Game Play
-
-<p align="left">
-  <img src="https://github.com/ihsuy/Typon/blob/master/demo_gif/intro.gif" height="370">
-</p>
+## Regular Gameplay  
 
 The Typon's regular game flow goes like:
 
