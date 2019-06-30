@@ -64,11 +64,11 @@ Run the makefile
 cd Typon/Typon/
 make
 ```
-Run Typon, or...  
+Run Typon (window too big? learn how to [customize](#changing-appearance))
 ```sh
 ./typon
 ```
-**Optional**: After building the binary, you can choose to **install** Typon to your `usr/local/bin` directory
+**Install**: After building the binary, you can choose to install Typon to your `usr/local/bin` directory by
 ```sh
 [sudo] make install
 ```
@@ -253,7 +253,7 @@ typon -path
 - **MAX_ID**, by default, is set to be: **3001**
 
 > **Note**: I didn't feel the necessity to make MAX_ID an optional value, however, it can be easily modified in the 
->           [source code](https://github.com/ihsuy/Typon/blob/master/Typon_src/src/main.cpp). 
+>           [source code](https://github.com/ihsuy/Typon/blob/master/Typon/src/main.cpp). 
 
 Any text files that are not in [**Typon's quotes directory**](#typon-file-structure) or does not follow the aforementioned [**naming rules**](#quote-naming-rules) will be ignored by Typon.
 
