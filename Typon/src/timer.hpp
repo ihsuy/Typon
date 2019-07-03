@@ -9,39 +9,39 @@
 using namespace std;
 
 struct timer {
-  chrono::high_resolution_clock::time_point start_t{};
-  chrono::high_resolution_clock::time_point stop_t{};
+    chrono::high_resolution_clock::time_point start_t{};
+    chrono::high_resolution_clock::time_point stop_t{};
 
-  vector<chrono::high_resolution_clock::time_point> full_record;
+    vector<chrono::high_resolution_clock::time_point> full_record;
 
-  void start();
+    void start();
 
-  double split();
+    double split();
 
-  void update();
+    void update();
 
-  void stop();
+    void stop();
 
-  double total_duration_in_sec();
+    double total_duration_in_sec();
 
-  void reset();
+    void reset();
 
-  void pause(); // not yet implemented
+    void pause();  // not yet implemented
 
-  void resume(); // not yet implemented
+    void resume();  // not yet implemented
 
-  vector<double> durations_in_sec();
+    vector<double> durations_in_sec();
 
-  vector<long long> durations_in_ms();
+    vector<long long> durations_in_ms();
 
-  vector<chrono::duration<double>> durations();
+    vector<chrono::duration<double>> durations();
 
-  bool isStopped() { return stopped; }
-  bool isStarted() { return started; }
+    bool isStopped() { return stopped; }
+    bool isStarted() { return started; }
 
-private:
-  bool stopped = true;
-  bool started = false;
+   private:
+    bool stopped = true;
+    bool started = false;
 };
 
 #endif /* timer_hpp */
