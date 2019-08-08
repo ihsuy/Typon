@@ -246,7 +246,7 @@ Since Typon doesn't keep a copy of the content of all the text files, it only re
 #
 
 #### More About Text File Contents
-If the window's size allows, Typon accepts **ANY** content as long as its in English Language.
+If the window's size allows, Typon accepts any content as long as its in English Language.
 If possible Typon also preserves the original format of your text file.
 
 <p align="left">
