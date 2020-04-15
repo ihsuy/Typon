@@ -297,10 +297,8 @@ Forceably resizing terminal to an invalid size will cause Typon to quit.
 Current versions only support changing **Typon**'s color setting by modifying Terminal's color definition.
 
 ## Credits
-
 Heartful thank you to: 
 - Anna and [farleyoli](https://github.com/farleyoli) for great suggestions and advices.
 
 ## License
-Copyright (c) Yushi Qiu. All rights reserved.  
-Licensed under the GNU General Public License v3.0.
+MIT
