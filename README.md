@@ -73,9 +73,13 @@ typon
 ### Useful flags
 
 **Resize**  
-`-resize [width][heigh]`  *(My favorite setting is width:75\~80 height: 23\~29)*  
+`-resize [width][heigh]`  *(My favorite setting is width:75\~80 height: 23\~29)*
+
+
 **Locate**  
 `-path`  
+
+
 **Disable Shuffling**  
 `-noshuffle`  
 
