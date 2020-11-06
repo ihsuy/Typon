@@ -276,7 +276,7 @@ There are **two** different ways to resize **Typon**:
 ```
 typon -resize 90 30
 ```
-> **Note**: This forces **Typon** to be exactly the size specified by the input, and it can resize **Typon** to any size as long             as you have a large enough Terminal window.  
+> **Note**: This forces **Typon** to be exactly the size specified by the input, and it can resize **Typon** to any size as long as you have a large enough Terminal window.  
   
 **Note**: Either way, you can't resize Typon to larger than the current Terminal window's size, or smaller than  
 `Absolute minimum window width: 55` x `Absolute minimum window height: 20`.  
